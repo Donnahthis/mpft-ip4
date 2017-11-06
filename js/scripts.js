@@ -1,49 +1,60 @@
-var person = function(userNumber) {
-  var numberArray = [];
-  if (userNumber < 0) { //negative numbers
-    for (var index = -1; index >= userNumber; index--) {
-      numberArray.push(index);
-    }
-    numberArray.forEach(function(number) {
-      if (number % 15 === 0) {
-        numberArray[-number-1] = 'person';
-      } else if (number % 3 === 0) {
-        numberArray[-number-1] = 'ping';
-      } else if (number % 5 === 0) {
-        numberArray[-number-1] = 'pong';
-      }
+var Player = {};
+
+
+function tonney(){
+  return Math.floor(Math.random() * 6) + 1;
+}
+
+
+$(function() {
+
+
+  $("form").submit(function(event) {
+    event.preventDefault();
+    var player_1 = $(".player1Name").val();
+    var player_2 = $(".player2Name").val();
+    $(".gaming").show();
+    $("#footer").show();
+    $("#player1Name").text(player_1);
+    $("#player2Name").text(player_2);
+  });
+
+
+  $("button#new-game").click(function(event) {
+    event.preventDefault();
+    $(".gaming").hide();
+    $(".player1Name").val("");
+    $(".player2Name").val("");
+  });
+
+  $("button#player1-toss").click(function(event) {
+    event.preventDefault();
+    var score1 = tonney();
+    $("#total-score-1").html(score1);
+
+    $("#round-total-1").html("The total is " + score1);
+
     });
-  } else if (userNumber > 0) { //positive numbers
-      for (var index = 1; index <= userNumber; index++) {
-        numberArray.push(index);
-      }
-      numberArray.forEach(function(number) {
-        if (number % 15 === 0) {
-          numberArray[number-1] = 'pingpong';
-        } else if (number % 3 === 0) {
-          numberArray[number-1] = 'ping';
-        } else if (number % 5 === 0) {
-          numberArray[number-1] = 'pong';
-        }
-      });
-  }
-  return numberArray;
-}
 
-var displayResultList = function(outputArray) {
-    $('ul#btn').empty();
-  outputArray.forEach(function(item) {
-    $('ul#btn').append('<li>' + item + '</li>');
+  $("button#player2-toss").click(function(event) {
+    event.preventDefault();
+    var score2 = tonney();
+    $("#total-score-2").html(score2);
+
+    $("#round-total-2").html("The total is " + score2);
   });
-  return;
-}
 
-$(document).ready(function() {
-  $('form#person').submit(function(event) {
-    var userNumber = $('input#userNumber').val();
-
-   displayResultList(person(userNumber));
-
-   event.preventDefault();
+  $("#lev1").click(function(event) {
+    $("body").css("background-color", "#f1f3f1")
   });
+
+  $("#lev2").click(function(event) {
+    $("body").css("background-color", "#f1f344")
+  });
+
+  $("#lev3").click(function(event) {
+    $("body").css("background-color", "#f13344")
+  });
+
+
 });
