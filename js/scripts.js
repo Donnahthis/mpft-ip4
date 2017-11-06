@@ -1,7 +1,7 @@
 var Player = {};
 
 
-function tonney(){
+function dona(){
   return Math.floor(Math.random() * 6) + 1;
 }
 
@@ -29,7 +29,7 @@ $(function() {
 
   $("button#player1-toss").click(function(event) {
     event.preventDefault();
-    var score1 = tonney();
+    var score1 = dona();
     $("#total-score-1").html(score1);
 
     $("#round-total-1").html("The total is " + score1);
@@ -38,22 +38,22 @@ $(function() {
 
   $("button#player2-toss").click(function(event) {
     event.preventDefault();
-    var score2 = tonney();
+    var score2 = dona();
     $("#total-score-2").html(score2);
 
     $("#round-total-2").html("The total is " + score2);
   });
 
   $("#lev1").click(function(event) {
-    $("body").css("background-color", "#f1f3f1")
+    $("body").css("background-color", "magenta")
   });
 
   $("#lev2").click(function(event) {
-    $("body").css("background-color", "#f1f344")
+    $("body").css("background-color", "grassGreen")
   });
 
   $("#lev3").click(function(event) {
-    $("body").css("background-color", "#f13344")
+    $("body").css("background-color", "skyBlue")
   });
 
 
