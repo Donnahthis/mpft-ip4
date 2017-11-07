@@ -54,15 +54,15 @@
     border-top:  44px solid white;
     border-bottom: 24px solid white;
     background-color: skyBlue;
-    float: right;
+    float: left;
   }
-  /*.test-box2 {
-    border-left:  54px solid grey;
-    border-right: 40px solid grey;
-    border-top:  54px solid grey;
-    border-bottom: 40px solid grey;
+  .div {
+    margin:left:  54px solid grey;
+    margin-right: 40px solid grey;
+    margin-top:  54px solid grey;
+    margin-bottom: 40px solid grey;
     float: justify;
-  }*/
+  }
 
     /*li {
       font-style: italic;
@@ -77,7 +77,7 @@
       border-bottom: 14px solid white;
       /*background-color: skyBlue;*/
       /*float: justify;*/
-    /*}*/*/
+    /*}*/
 
     /*.container {
        display: inline;
